@@ -1,0 +1,40 @@
+<form class="auth-form">
+  <input type="text" placeholder="Name" />
+
+  <input type="checkbox" name="checkbox" [(ngModel)]="checkbox" />
+</form>
+
+<button (click)="checkbox = !checkbox">Toggle</button>
+<h2 *ngIf="checkbox">Lorem ipsum dolor sit amet.</h2>
+
+<button (click)="disableText = !disableText">Toggle</button>
+<h2 [class.is-disabled]="disableText">Lorem ipsum dolor sit amet.</h2>
+
+<div class="progress">
+  <div class="progress__bar">
+    <div class="progress__Line" [style.width]="progress + '%'"></div>
+  </div>
+</div>
+
+<div [ngSwitch]="car">
+  <p *ngSwitchCase="'BMW'">This is BMW</p>
+  <p *ngSwitchCase="'Audi'">This is Audi</p>
+  <p *ngSwitchCase="'Mercedes'">This is Mercedes</p>
+
+  <p *ngSwitchDefault>Car is undefined</p>
+</div>
+
+<button>{{ btnText }}</button>
+
+<input type="text" [(ngModel)]="inputText" />
+<button (click)="inputText = ''">Clear</button>
+
+<input [type]="passwordShow ? 'text' : 'password'" />
+<button (click)="passwordShow = !passwordShow">Toggle type</button>
+
+<ul>
+  <li *ngFor="let car of cars; let i = index">
+    {{ i + 1 }}. {{ car.name }}, {{ car.year }}
+  </li>
+</ul>
+<div *ngIf="!cars.length">Nothing to show</div>

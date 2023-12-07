@@ -1,0 +1,10 @@
+@import "vars";
+
+.auth-footer {
+  color: $gray;
+  font-family: var(--ff);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px;
+}
