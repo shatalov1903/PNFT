@@ -5,6 +5,9 @@
   align-items: center;
   gap: 12px;
   max-width: 146px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
 
   &__text {
     color: $black;

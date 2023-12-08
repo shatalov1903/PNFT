@@ -1,4 +1,4 @@
-<form class="auth-form">
+<!-- <form class="auth-form">
   <input type="text" placeholder="Name" />
 
   <input type="checkbox" name="checkbox" [(ngModel)]="checkbox" />
@@ -24,17 +24,45 @@
   <p *ngSwitchDefault>Car is undefined</p>
 </div>
 
-<button>{{ btnText }}</button>
+<button>{{ btnText }}</button> -->
 
-<input type="text" [(ngModel)]="inputText" />
-<button (click)="inputText = ''">Clear</button>
+<form class="form">
+  <div class="title">NFT Access</div>
+  <div class="desc">Please fill your detail to access your account.</div>
+  <label class="field">
+    <span class="field__text">Email</span>
+    <input class="field__input" type="email" [(ngModel)]="inputText" />
+    <button (click)="inputText = ''">
+      <img src="assets/x-icon.svg" alt="X-icon" />
+    </button>
+  </label>
+  <label class="field">
+    <span class="field__text">Password</span>
+    <input class="field__input" [type]="passwordShow ? 'text' : 'password'" />
+    <button (click)="passwordShow = !passwordShow">
+      <img src="assets/hide-icon.svg" alt="Hide-icon" />
+    </button>
+  </label>
+  <div class="remember">
+    <label class="remember-label">
+      <input type="checkbox" class="remember-label__input" />
+      <span class="remember-label__text">Remember me</span>
+    </label>
+    <a class="remember__a" routerLink="/">Forgot Password?</a>
+  </div>
+  <button class="btn btn_primary">Sign in</button>
+  <button class="btn btn_secondary">
+    <img src="assets/google.svg" alt="Google" />
+    <span>Sign in with Google</span>
+  </button>
+  <div class="info">
+    Don’t have an account? <a class="info__a" routerLink="/">Sign up</a>
+  </div>
+</form>
 
-<input [type]="passwordShow ? 'text' : 'password'" />
-<button (click)="passwordShow = !passwordShow">Toggle type</button>
-
-<ul>
+<!-- <ul>
   <li *ngFor="let car of cars; let i = index">
     {{ i + 1 }}. {{ car.name }}, {{ car.year }}
   </li>
 </ul>
-<div *ngIf="!cars.length">Nothing to show</div>
+<div *ngIf="!cars.length">Nothing to show</div> -->

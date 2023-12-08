@@ -4,16 +4,18 @@
   justify-content: space-between;
   padding: 32px;
   gap: 20px;
+  @media (max-width: 576px) {
+    padding: 88px 32px;
+  }
 }
 
 .auth-info {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-}
-
-app-auth-form {
-  flex-grow: 1;
+  @media (max-width: 576px) {
+    align-items: center;
+  }
 }
 
 .auth-img {
