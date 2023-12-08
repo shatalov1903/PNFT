@@ -46,15 +46,16 @@
   <div class="remember">
     <label class="remember-label">
       <input type="checkbox" class="remember-label__input" />
+      <span class="remember-label__check"></span>
       <span class="remember-label__text">Remember me</span>
     </label>
     <a class="remember__a" routerLink="/">Forgot Password?</a>
   </div>
-  <button class="btn btn_primary">Sign in</button>
-  <button class="btn btn_secondary">
+  <button type="submit" class="btn btn_primary">Sign in</button>
+  <a routerLink="/" class="btn btn_secondary">
     <img src="assets/google.svg" alt="Google" />
     <span>Sign in with Google</span>
-  </button>
+  </a>
   <div class="info">
     Don’t have an account? <a class="info__a" routerLink="/">Sign up</a>
   </div>

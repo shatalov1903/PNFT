@@ -28,8 +28,10 @@
   margin-left: 100px;
   margin-bottom: 162px;
   @media (max-width: 1300px) {
-    margin-top: 56px;
     margin-left: 0;
+  }
+  @media (max-width: 576px) {
+    margin-top: 56px;
   }
 }
 
@@ -41,6 +43,9 @@
   letter-spacing: 0.4px;
   text-transform: capitalize;
   margin-bottom: 8px;
+  @media (max-width: 576px) {
+    font-size: 32px;
+  }
 }
 
 .desc {
@@ -70,7 +75,7 @@
     margin-bottom: 20px;
     outline: 0;
     border: 0;
-    padding: 10px 14px;
+    padding: 10px 45px 10px 14px;
     border-radius: 8px;
     border: 1px solid #d0d5dd;
     color: #667085;
@@ -82,7 +87,7 @@
 
   button {
     position: absolute;
-    right: 15px;
+    right: 14px;
     top: 50%;
     transform: translateY(-38%);
     cursor: pointer;
@@ -90,7 +95,7 @@
     height: 24px;
     padding: 0;
     border: 0;
-    background: #fff;
+    background: $white;
   }
 }
 .remember {
@@ -101,7 +106,7 @@
   margin-bottom: 32px;
 
   &__a {
-    color: #5429ff;
+    color: $c-primary;
     font-family: var(--ff);
     font-size: 14px;
     font-weight: 500;
@@ -114,12 +119,37 @@
   gap: 8px;
 
   &__input {
-    border: 0;
-    outline: 0;
-    width: 16px;
-    height: 16px;
+    display: none;
+  }
+
+  &__input:checked ~ &__check {
+    background: #3b4256;
+  }
+
+  &__input:checked ~ &__check::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__check {
+    width: 15px;
+    height: 15px;
     border-radius: 4px;
     border: 1px solid #d0d5dd;
+    background: transparent;
+    transition: 0.2s all ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__check::before {
+    content: "\2714";
+    color: $white;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.2s all ease-in;
   }
 
   &__text {
@@ -140,12 +170,18 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  transition: 0.2s all ease-in;
 
   &_primary {
-    color: #fff;
-    background: #5429ff;
+    color: $white;
+    background: $c-primary;
     margin-bottom: 16px;
     padding: 12px 0;
+    @media (min-width: 992px) {
+      &:hover {
+        background: lighten($c-primary, 5%);
+      }
+    }
   }
 
   &_secondary {
@@ -153,10 +189,16 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    background: $white;
     color: #344054;
     border: 1px solid #d0d5dd;
     margin-bottom: 20px;
     padding: 10px 0;
+    @media (min-width: 992px) {
+      &:hover {
+        background: darken($white, 5%);
+      }
+    }
   }
 
   img {
@@ -173,7 +215,7 @@
   line-height: 24px;
 
   &__a {
-    color: #5429ff;
+    color: $c-primary;
     font-weight: 500;
     line-height: 20px;
   }
