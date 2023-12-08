@@ -123,7 +123,7 @@
   }
 
   &__input:checked ~ &__check {
-    background: #3b4256;
+    background: $c-primary;
   }
 
   &__input:checked ~ &__check::before {
