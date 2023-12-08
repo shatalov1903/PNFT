@@ -31,7 +31,12 @@
   <div class="desc">Please fill your detail to access your account.</div>
   <label class="field">
     <span class="field__text">Email</span>
-    <input class="field__input" type="email" [(ngModel)]="inputText" />
+    <input
+      class="field__input"
+      type="email"
+      [(ngModel)]="inputText"
+      name="inputText"
+    />
     <button (click)="inputText = ''">
       <img src="assets/x-icon.svg" alt="X-icon" />
     </button>
