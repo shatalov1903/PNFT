@@ -1,31 +1,3 @@
-<!-- <form class="auth-form">
-  <input type="text" placeholder="Name" />
-
-  <input type="checkbox" name="checkbox" [(ngModel)]="checkbox" />
-</form>
-
-<button (click)="checkbox = !checkbox">Toggle</button>
-<h2 *ngIf="checkbox">Lorem ipsum dolor sit amet.</h2>
-
-<button (click)="disableText = !disableText">Toggle</button>
-<h2 [class.is-disabled]="disableText">Lorem ipsum dolor sit amet.</h2>
-
-<div class="progress">
-  <div class="progress__bar">
-    <div class="progress__Line" [style.width]="progress + '%'"></div>
-  </div>
-</div>
-
-<div [ngSwitch]="car">
-  <p *ngSwitchCase="'BMW'">This is BMW</p>
-  <p *ngSwitchCase="'Audi'">This is Audi</p>
-  <p *ngSwitchCase="'Mercedes'">This is Mercedes</p>
-
-  <p *ngSwitchDefault>Car is undefined</p>
-</div>
-
-<button>{{ btnText }}</button> -->
-
 <form class="form">
   <div class="title">NFT Access</div>
   <div class="desc">Please fill your detail to access your account.</div>
@@ -34,6 +6,7 @@
     <input
       class="field__input"
       type="email"
+      placeholder="Enter your email"
       [(ngModel)]="inputText"
       name="inputText"
     />
@@ -43,9 +16,13 @@
   </label>
   <label class="field">
     <span class="field__text">Password</span>
-    <input class="field__input" [type]="passwordShow ? 'text' : 'password'" />
+    <input
+      class="field__input"
+      placeholder="Enter your password"
+      [type]="passwordShow ? 'text' : 'password'"
+    />
     <button (click)="passwordShow = !passwordShow">
-      <img src="assets/hide-icon.svg" alt="Hide-icon" />
+      <img src="assets/hide-icon off.svg" alt="Hide-icon off" />
     </button>
   </label>
   <div class="remember">
@@ -57,7 +34,11 @@
     <a class="remember__a" routerLink="/">Forgot Password?</a>
   </div>
   <button type="submit" class="btn btn_primary">Sign in</button>
-  <a routerLink="/" class="btn btn_secondary">
+  <a
+    href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%3Fhl%3Dru&ec=GAlA8wE&hl=en-US&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S403664016%3A1702064423781496&theme=glif"
+    target="_blank"
+    class="btn btn_secondary"
+  >
     <img src="assets/google.svg" alt="Google" />
     <span>Sign in with Google</span>
   </a>
@@ -65,10 +46,3 @@
     Don’t have an account? <a class="info__a" routerLink="/">Sign up</a>
   </div>
 </form>
-
-<!-- <ul>
-  <li *ngFor="let car of cars; let i = index">
-    {{ i + 1 }}. {{ car.name }}, {{ car.year }}
-  </li>
-</ul>
-<div *ngIf="!cars.length">Nothing to show</div> -->
