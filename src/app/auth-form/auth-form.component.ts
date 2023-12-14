@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AuthFormComponent {
 public inputText = '';  
-public passwordShow = false;  
+public passwordShow = false; 
 }

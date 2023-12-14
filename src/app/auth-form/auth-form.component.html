@@ -22,7 +22,16 @@
       [type]="passwordShow ? 'text' : 'password'"
     />
     <button (click)="passwordShow = !passwordShow">
-      <img src="assets/hide-icon off.svg" alt="Hide-icon off" />
+      <img
+        *ngIf="passwordShow"
+        src="assets/hide-icon off.svg"
+        alt="Hide-icon off"
+      />
+      <img
+        *ngIf="!passwordShow"
+        src="assets/hide-icon on.svg"
+        alt="Hide-icon on"
+      />
     </button>
   </label>
   <div class="remember">
